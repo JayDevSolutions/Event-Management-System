@@ -1,0 +1,38 @@
+{
+  "name": "event-management-system-graphql",
+  "version": "0.0.1",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "docker:up": "docker-compose -f docker-compose.yml --env-file ./docker/.env.docker up -d --build",
+    "docker:down": "docker-compose -f docker-compose.yml --env-file ./docker/.env.docker down",
+    "docker:logs": "docker logs -f event-management-graphql",
+    "docker:install": "docker exec -it event-management-graphql npm i",
+    "pre-docker:up": "sh ./docker/startup.sh",
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.0",
+    "@graphql-tools/merge": "^9.0.1",
+    "@graphql-tools/utils": "^10.1.0",
+    "bcrypt": "5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
+    "graphql": "^16.8.1",
+    "graphql-tools": "^9.0.0",
+    "http": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1"
+  },
+  "devDependencies": {
+    "@types/graphql-resolvers": "^0.3.2",
+    "nodemon": "^3.0.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}
